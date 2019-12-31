@@ -12,6 +12,7 @@ if($json->token != $token){
 
 file_put_contents("/opt/heater/last_mode_req", $post);
 
+// Spanish voice commands
 switch(strtoupper($json->mode)){
 	case "ENCIENDE LA":
 	case "ENCENDIDO":
