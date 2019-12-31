@@ -1,17 +1,26 @@
 ## Raspberry PI Heater Controller
 ### Setup Instructions
 
-Install path (!): **/opt/heater/**
+
 
 Create the following files:
 - **token**: Must contain a secret string for API calls (eg: "ABCD1234").
 - **debug.log**: Must have write permissions by php user.
 - **last_temp_req** and **last_mode_req**: Must have write permissions by http user.
+ 
+Setup desired temperatures (Celsius) in files:
+ - **active_temp**
+ - **inactive_temp**
+ - **temp_margin**
 
-Move API hooks to public HTTP Server path (eg: /var/www/html/):
+Setup desired schedule in file:
+ - **schedule.json**
+
+Move/Link API hooks to public HTTP Server path (eg: /var/www/html/):
  - **set_temp.php**
  - **set_mode.php**
-
-(!): If install path is different, update API hooks accordingly.
+ 
+Install path (if different, update API hooks accordingly):
+ - **/opt/heater/**
 
 ###### (C) pebs74
