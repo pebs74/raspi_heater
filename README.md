@@ -39,4 +39,9 @@ Install path (if different, update API hooks accordingly):
 
  - **/opt/heater/**
 
+Run heater script (verbose):
+
+<pre>php /opt/heater/run.php -v</pre>
+ 
+ 
 ###### (C) pebs74
