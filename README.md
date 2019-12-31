@@ -46,7 +46,9 @@ Install path (if different, update API hooks accordingly):
 
 Run heater script (verbose):
 
-<pre>php /opt/heater/run.php -v</pre>
+<pre>
+php /opt/heater/run.php -v
+</pre>
 
 Recommended crontab setup:
 
