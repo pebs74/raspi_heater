@@ -51,6 +51,7 @@ $log .= "\t| SCHEDULE: $status";
 // mode
 $mode = strtoupper(trim(file_get_contents($modePath)));
 switch($mode){
+    // permanent override modes (warning: fixed status)
     case "ON":
     case "OFF":
         if($currState != $mode){
@@ -62,6 +63,7 @@ switch($mode){
         // end
         return;
         break;
+    // temporary override modes (end when schedule catches up)
     case "ACTIVE":
     case "INACTIVE":
     	if($status != $mode){
