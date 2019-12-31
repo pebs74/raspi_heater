@@ -2,9 +2,9 @@
 
 ### Requirements
 
-- Raspberry PI with Raspbian.
-- Relay module similar to [this one](https://www.amazon.com/-/es/jbtek-canales-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_6).
-- DHT11 or DHT22 temperature and humidity sensor.
+- Raspberry PI with [Raspbian](https://www.raspberrypi.org/downloads/raspbian/).
+- [Relay module](https://www.amazon.com/-/es/jbtek-canales-Module-Arduino-Raspberry/dp/B00KTEN3TM/ref=sr_1_6).
+- [DHT11](https://www.amazon.com/-/es/hiletgo-temperatura-humedad-Arduino-2560-AVR/dp/B01DKC2GQ0/ref=sr_1_4) or [DHT22](https://www.amazon.com/-/es/AM2302-Digital-temperatura-SHT11-SHT15-para-electr%C3%B3nico-pr%C3%A1ctica/dp/B0795F19W6/ref=sr_1_4?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=dht22&qid=1577780099&sr=8-4) temperature and humidity sensor.
 
 ### Setup Instructions
 
