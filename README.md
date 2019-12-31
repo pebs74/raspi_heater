@@ -29,9 +29,9 @@ Setup desired schedule:
  
 Setup connection pins and sensor model in files:
 
- - **get_temp.sh**: DHT11 and pin 4 by default.
- - **turn_on.sh**: pin 2 by default
- - **turn_off.sh**: pin 2 by default.
+ - **get_temp.sh**: DHT11 on pin 4 by default.
+ - **turn_on.sh**: relay on pin 2 by default
+ - **turn_off.sh**: relay on pin 2 by default.
 
 Move/Link API hooks to public HTTP Server path (eg: /var/www/html/):
 
