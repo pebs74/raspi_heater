@@ -58,7 +58,7 @@ Recommended crontab setup:
 # Monitor mode override file and run heater script on changes
 @reboot cd /opt/heater && fswatch --monitor=poll_monitor -0 mode | xargs -0 -I {} bash -c './run.php >> debug.log'
 
-# Turn off raspi onboard leds at boot
+# Turn off raspi onboard leds on boot
 @reboot echo none > /sys/class/leds/led0/trigger
 @reboot echo none > /sys/class/leds/led1/trigger
 @reboot echo 0 > /sys/class/leds/led0/brightness
