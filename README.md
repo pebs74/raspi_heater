@@ -41,9 +41,35 @@ Install path (if different, update API hooks accordingly):
 
  - **/opt/heater/**
 
+### Usage
+
 Run heater script (verbose):
 
 <pre>php /opt/heater/run.php -v</pre>
+
+Recommended crontab setup:
+
+<pre>
+# m h  dom mon dow   command
+
+# Heater state to "OFF" on boot
+@reboot echo "OFF" > /opt/heater/curr_state
+
+# Monitor mode override file and run heater script on changes
+@reboot cd /opt/heater && fswatch --monitor=poll_monitor -0 mode | xargs -0 -I {} bash -c './run.php >> debug.log'
+
+# Turn off raspi onboard leds at boot
+@reboot echo none > /sys/class/leds/led0/trigger
+@reboot echo none > /sys/class/leds/led1/trigger
+@reboot echo 0 > /sys/class/leds/led0/brightness
+@reboot echo 0 > /sys/class/leds/led1/brightness
+
+# Disable HDMI on boot
+@reboot /usr/bin/tvservice -o
+
+# Run heater script every minute
+* * * * * cd /opt/heater && ./run.php >> debug.log
+</pre>
  
  
 ###### (C) pebs74
