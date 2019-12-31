@@ -1,7 +1,7 @@
 ## Raspberry PI Heater Controller
 ### Setup Instructions
 
-Install path: **/opt/heater/**
+Install path (!): **/opt/heater/**
 
 Create the following files:
 - **token**: Must contain a secret string for API calls (eg: "ABCD1234").
@@ -12,5 +12,6 @@ Move API hooks to public HTTP Server path (eg: /var/www/html/):
  - **set_temp.php**
  - **set_mode.php**
 
+(!): If install path is different, update API hooks accordingly.
 
 ###### (C) pebs74
