@@ -10,14 +10,12 @@ $offPath = "./turn_off.sh";
 $schedulePath = "schedule.json";
 $activeTempPath = "active_temp";
 $inactiveTempPath = "inactive_temp";
-$tempMarginPath = "temp_margin";
 $currStatePath = "curr_state";
 $modePath = "mode";
 
 // debug mode
 if(in_array("-v", $argv)){
 	$debug = true;
-	print_r("DEBUG MODE ON".PHP_EOL);
 } else{
 	$debug = false;
 }
@@ -86,9 +84,6 @@ if($status == "ACTIVE"){
 	$target = trim(file_get_contents($inactiveTempPath));
 }
 
-// temperature settings
-$margin = trim(file_get_contents($tempMarginPath));
-
 // current temperature and humidity values
 $TH = explode(";", shell_exec($getTempPath));
 $T = floatval($TH[0]);
@@ -97,15 +92,15 @@ $H = floatval($TH[1]);
 // info
 $log .= "\t| Temp: $T ºC"
 	. "\t| Humid: $H %"
-	. "\t| Target: " . ($target-$margin) . " ~ " . ($target+$margin) . " ºC"
+	. "\t| Target: $target ºC"
 	. "\t| CurrState: $currState";
 
 // action if required
-if($currState == "OFF" && ($target - $T) >= $margin){
+if($currState == "OFF" && $T < $target){
 	$log .= "\t| TURN ON";
 	shell_exec($onPath);
 	$printLog = true;
-} elseif($currState == "ON" && ($T - $target) >= $margin){
+} elseif($currState == "ON" && $T > $target){
 	$log .= "\t| TURN OFF";
 	shell_exec($offPath);
 	$printLog = true;
