@@ -1,32 +1,32 @@
 {
 	"Monday": [
 		{
-			"start": "17:00",
+			"start": "12:00",
 			"end": "22:30"
 		}
 	],
 	"Tuesday": [
 		{
-			"start": "16:00",
+			"start": "12:00",
 			"end": "22:30"
 		}
 	],
 	"Wednesday": [
 		{
-			"start": "16:00",
+			"start": "12:00",
 			"end": "22:30"
 		}
 	],
 	"Thursday": [
 		{
-			"start": "16:00",
+			"start": "12:00",
 			"end": "22:30"
 		}
 	],
 	"Friday": [
 		{
-			"start": "14:00",
-			"end": "22:30"
+			"start": "12:00",
+			"end": "23:00"
 		}
 	],
 	"Saturday": [
@@ -38,7 +38,7 @@
 	"Sunday": [
 		{
 			"start": "12:00",
-			"end": "23:00"
+			"end": "22:30"
 		}
 	]
 }

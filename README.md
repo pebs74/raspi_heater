@@ -14,7 +14,7 @@
 Create the following files:
 
 - **token**: Must contain a secret string for API calls (eg: "ABCD1234").
-- **debug.log**: Must have write permissions by php user.
+- **run.log**: Must have write permissions by php user.
 - **last_temp_req** and **last_mode_req**: Must have write permissions by http user.
  
 Setup desired temperatures (in Celsius):
@@ -59,7 +59,7 @@ Recommended crontab setup:
 @reboot echo "OFF" > /opt/heater/curr_state
 
 # Monitor mode override file and run heater script on changes
-@reboot cd /opt/heater && fswatch --monitor=poll_monitor -0 mode | xargs -0 -I {} bash -c './run.php >> debug.log'
+@reboot cd /opt/heater && fswatch --monitor=poll_monitor -0 mode | xargs -0 -I {} bash -c './run.php >> run.log'
 
 # Turn off raspi onboard leds on boot
 @reboot echo none > /sys/class/leds/led0/trigger
@@ -71,7 +71,7 @@ Recommended crontab setup:
 @reboot /usr/bin/tvservice -o
 
 # Run heater script every minute
-* * * * * cd /opt/heater && ./run.php >> debug.log
+* * * * * cd /opt/heater && ./run.php >> run.log
 </pre>
  
  

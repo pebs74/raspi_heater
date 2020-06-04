@@ -6,7 +6,7 @@ $token = trim(file_get_contents("/opt/heater/token"));
 
 if($json->token != $token){
     header('HTTP/1.0 403 Forbidden');
-    print_r("FORBIDDEN");
+    print_r("403 FORBIDDEN");
     return;
 }
 
