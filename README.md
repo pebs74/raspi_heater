@@ -75,4 +75,4 @@ Recommended crontab setup:
 </pre>
  
  
-###### (C) pebs74
+###### (R) pebs74
